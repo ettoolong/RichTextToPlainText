@@ -18,5 +18,19 @@
     "multiprocess": true
   },
   "icon": "resource://@richtexttoplaintext/data/img/icon.svg",
-  "icon64": "resource://@richtexttoplaintext/data/img/icon.svg"
+  "icon64": "resource://@richtexttoplaintext/data/img/icon.svg",
+  "preferences": [{
+    "type": "bool",
+    "name": "trimSpace",
+    "value": true,
+    "title": "trimSpace",
+    "description": "trimSpace"
+  },
+  {
+    "type": "bool",
+    "name": "removeEmptyLine",
+    "value": true,
+    "title": "removeEmptyLine",
+    "description": "removeEmptyLine"
+  }]
 }
