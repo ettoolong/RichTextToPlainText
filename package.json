@@ -1,0 +1,22 @@
+{
+  "title": "Rich text to plain text",
+  "name": "richtexttoplaintext",
+  "version": "0.0.1",
+  "description": "Convert clipboard's text to plain text.",
+  "main": "data/js/addon-script.js",
+  "author": "ettoolong@hotmail.com",
+  "homepage": "https://addons.mozilla.org/zh-TW/firefox/user/ett-chung/",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ],
+  "permissions":{
+    "multiprocess": true
+  },
+  "icon": "resource://@richtexttoplaintext/data/img/icon.svg",
+  "icon64": "resource://@richtexttoplaintext/data/img/icon.svg"
+}
