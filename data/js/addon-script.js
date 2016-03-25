@@ -27,16 +27,7 @@ require("sdk/ui/button/action").ActionButton({
     let text = clipboard.get("text");
     if(text) {
       if(addonPrefs.trimSpace) {
-        text = text.replace(/\n\r/g, "\n");
-        let lines = text.split("\n");
-        text = '';
-        for (let i=0; i < lines.length; i++) {
-          text+=lines[i].replace(/^\s+|\s+$/g, "");
-          if(i < lines.length-1) {
-            text+="\n";
-          }
-        }
-        //text = text.replace(/^\s+|\s+$/gm, "");
+        text = text.replace(/^[ \t\f]+|[ \t\f]+$/gm, "");
       }
       if(addonPrefs.removeEmptyLine) {
         text = text.replace(/[\n\r]+/g, "\n");

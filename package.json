@@ -1,7 +1,7 @@
 {
   "title": "Rich text to plain text",
   "name": "richtexttoplaintext",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Convert clipboard's text to plain text.",
   "main": "data/js/addon-script.js",
   "author": "ettoolong@hotmail.com",
