@@ -1,7 +1,7 @@
 {
   "title": "Rich text to plain text",
   "name": "richtexttoplaintext",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Convert clipboard's text to plain text.",
   "main": "data/js/addon-script.js",
   "author": "ettoolong@hotmail.com",
@@ -14,7 +14,8 @@
     "jetpack"
   ],
   "permissions":{
-    "multiprocess": true
+    "multiprocess": true,
+    "private-browsing": true
   },
   "icon": "resource://@richtexttoplaintext/data/img/icon.svg",
   "icon64": "resource://@richtexttoplaintext/data/img/icon.svg",
