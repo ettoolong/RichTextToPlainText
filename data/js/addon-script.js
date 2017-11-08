@@ -1,39 +1,17 @@
-let self = require("sdk/self");
-let data = self.data;
-let clipboard = require("sdk/clipboard");
-let _ = require("sdk/l10n").get;
-
-let pref = require('sdk/preferences/service');
-let addonPrefs = {};
-var prefRoot = 'extensions.@richtexttoplaintext.';
-let prefsList = ['trimSpace', 'removeEmptyLine'];
-for(let i=0;i<prefsList.length;++i){
-  addonPrefs[prefsList[i]] = pref.get(prefRoot + prefsList[i]);
-}
-
-require("sdk/simple-prefs").on("", function(prefName){
-  addonPrefs[prefName] = pref.get(prefRoot + prefName);
-});
-
-require("sdk/ui/button/action").ActionButton({
-  id: "richtexttoplaintext-toolbutton",
-  label: _("buttonLabel"),
-  icon: {
-    "16": data.url("img/icon.svg"),
-    "32": data.url("img/icon.svg"),
-    "64": data.url("img/icon.svg")
-  },
-  onClick: function handleClick(state) {
-    let text = clipboard.get("text");
-    if(text) {
-      if(addonPrefs.trimSpace) {
-        text = text.replace(/^[ \t\f]+|[ \t\f]+$/gm, "");
+const webExtension = require('sdk/webextension');
+webExtension.startup().then(({browser}) => {
+  browser.runtime.onConnect.addListener(port => {
+    if (port.name === 'sync-legacy-addon-data') {
+      let pref = require('sdk/preferences/service');
+      let addonPrefs = {};
+      let prefRoot = 'extensions.@richtexttoplaintext.';
+      let prefsList = ['trimSpace', 'removeEmptyLine'];
+      for(let i=0;i<prefsList.length;++i){
+        addonPrefs[prefsList[i]] = pref.get(prefRoot + prefsList[i]);
+        if(addonPrefs[prefsList[i]] === undefined)
+          addonPrefs[prefsList[i]] = true;
       }
-      if(addonPrefs.removeEmptyLine) {
-        text = text.replace(/[\n\r]+/g, "\n");
-        text = text.replace(/\n$/,'');
-      }
-      clipboard.set(text, "text");
+      port.postMessage(addonPrefs);
     }
-  }
+  });
 });

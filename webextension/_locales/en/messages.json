@@ -1,0 +1,11 @@
+{
+  "actionButtonTitle": {
+    "message": "Rich text to plain text"
+  },
+  "trimSpace": {
+    "message": "Trim space around text"
+  },
+  "removeEmptyLine": {
+    "message": "Remove empty line"
+  }
+}

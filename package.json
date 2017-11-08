@@ -1,13 +1,14 @@
 {
+  "id": "@richtexttoplaintext",
   "title": "Rich text to plain text",
   "name": "richtexttoplaintext",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Convert clipboard's text to plain text.",
   "main": "data/js/addon-script.js",
-  "author": "ettoolong@hotmail.com",
+  "author": "Ett Chung",
   "homepage": "https://addons.mozilla.org/zh-TW/firefox/user/ett-chung/",
   "engines": {
-    "firefox": ">=38.0a1"
+    "firefox": ">=54.0a1"
   },
   "license": "MIT",
   "keywords": [
@@ -17,20 +18,5 @@
     "multiprocess": true,
     "private-browsing": true
   },
-  "icon": "resource://@richtexttoplaintext/data/img/icon.svg",
-  "icon64": "resource://@richtexttoplaintext/data/img/icon.svg",
-  "preferences": [{
-    "type": "bool",
-    "name": "trimSpace",
-    "value": true,
-    "title": "trimSpace",
-    "description": "trimSpace"
-  },
-  {
-    "type": "bool",
-    "name": "removeEmptyLine",
-    "value": true,
-    "title": "removeEmptyLine",
-    "description": "removeEmptyLine"
-  }]
+  "hasEmbeddedWebExtension": true
 }
